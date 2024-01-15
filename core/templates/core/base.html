@@ -1,3 +1,5 @@
+{% load static %}
+
 <head>
     <title>RecipeShop</title>
     {% block bscss %} {% endblock %}
@@ -7,7 +9,7 @@
     <div class="container-fluid" style="background-color: var(--bs-secondary-bg);">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 ps-3 pe-6 border-bottom">
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <img class="bi me-2" width="32" height="32" src="pixel_art_jack.png">
+            <img class="bi me-2" width="40" height="40" src="{% static 'core/img/logo.png' %}">
             <span class="fs-4">RecipeShop</span>
           </a>
     
