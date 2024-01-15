@@ -10,7 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # Create an environment variable with your secret key called 'RECIPESHOP'
-SECRET_KEY = os.environ['RECIPESHOP']
+# SECRET_KEY = os.environ['RECIPESHOP']
+SECRET_KEY = "12sytl#35-#+oavcchg_f^-qxj6*g(f$-84k4pl&5de5bja9lc"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

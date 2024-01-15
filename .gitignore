@@ -1,3 +1,5 @@
 db.sqlite3
 core/__pycache__
 recipeshop/__pycache__
+core/static/core/node_modules
+core/static/core/package-lock.json

@@ -8,7 +8,8 @@ from django.db import models
 class Recipe(models.Model):
     name = models.CharField(max_length=200)
     time_required = models.IntegerField(default=0)
-    image_path = models.CharField(max_length=200)
+    # image_path = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='uploads/')
     link = models.CharField(max_length=300)
 
 # Ingredient model, stores
