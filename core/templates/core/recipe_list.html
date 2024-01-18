@@ -8,12 +8,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="bg-secondary">
-    <ul>
+<div id="recipe-list" style="padding: 0px;" class="container">
         {% for recipe in object_list %}
-            <li><a href="{{ recipe.id }}/detail">{{ recipe.name }}</a></li>
+
+            {% if forloop.counter0|divisibleby:5 %}
+                <div class="row">
+            {% endif %}
+                
+                <div class="col-sm">
+                    <div class="card shadow mt-3" style="width: 18rem;">
+                        <img src="{{ recipe.image.url }}" class="card-img-top">
+                        <div class="card-body" style=" background: #FFFFFF;">
+                          <h5 class="card-title">{{recipe.name}}</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a class="btn btn-success" href="{{ recipe.id }}/detail">Add to cart</a>
+                          <a class="btn btn-warning" href="{{ recipe.id }}/detail">Save</a>
+                          <a class="btn btn-primary" href="#">Ingredients</a>
+                        </div>
+                      </div>
+                </div>
+
+            {% if forloop.counter|divisibleby:5 %}
+                </div>
+            {% endif %}
         {% endfor %}
-    </ul>
 </div>
 {% endblock %}
 

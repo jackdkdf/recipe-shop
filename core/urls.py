@@ -1,5 +1,8 @@
 from django.urls import path
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from .views import index, RecipeListView, RecipeCreateView, RecipeDeleteView, RecipeDetailView, RecipeUpdateView, RecipeSavedView, RecipeCartView
 
 urlpatterns = [
@@ -11,4 +14,4 @@ urlpatterns = [
     path("recipe/<int:pk>/delete/", RecipeDeleteView.as_view(), name="recipe-delete"),
     path("recipe/saved", RecipeSavedView.as_view(), name="recipe-saved"),
     path("recipe/cart", RecipeCartView.as_view(), name="recipe-cart"),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
