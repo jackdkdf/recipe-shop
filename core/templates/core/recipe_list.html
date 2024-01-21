@@ -10,12 +10,14 @@
 
 {% block content %}
 <div id="recipe-list" style="padding: 0px;" class="container-fluid">
-    <div class="input-group mx-auto" style="width: 30%;">
-        <input type="text" class="form-control" placeholder="Search recipes">
-        <button class="btn btn-primary" type="submit">Search</button>
-      </div>
+    <form action="{% url 'recipe-search' %}" method="get" class="form-inline">
+        <div class="input-group mx-auto" style="width: 30%;">
+            <input name="q" type="text" class="form-control" placeholder="Search recipes">
+            <button class="btn btn-primary" type="submit">Search</button>
+        </div>
+    </form>
     <div class="row row-cols-auto justify-content-center">
-        {% for recipe in object_list %}
+        {% for recipe in page_obj %}
                     <!-- Create card div for every recipe in database -->
                     <div class="col">
                         <div class="card shadow mt-4 mb-4" style="width: 18rem;">
@@ -26,7 +28,7 @@
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <div class="row d-flex justify-content-center align-content-center">
                                     <a class="btn btn-primary col-5 me-1" href="{{ recipe.id }}/detail">Add to cart</a>
-                                    <a class="btn btn-warning col-5" href="{{ recipe.id }}/detail">Save</a>
+                                    <a class="btn btn-success col-5" href="{{ recipe.id }}/detail">Save</a>
                                 </div>
                             </div>
                         </div>

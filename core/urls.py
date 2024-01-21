@@ -3,11 +3,11 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import index, RecipeListView, RecipeCreateView, RecipeDeleteView, RecipeDetailView, RecipeUpdateView, RecipeSavedView, RecipeCartView
+from .views import RecipeListView, RecipeCreateView, RecipeDeleteView, RecipeDetailView, RecipeUpdateView, RecipeSavedView, RecipeCartView, RecipeSearchView
 
 urlpatterns = [
-    path("", index, name="index"),
     path("recipe/list", RecipeListView.as_view(), name="recipe-list"),
+    path("recipe/search", RecipeSearchView.as_view(), name="recipe-search"),
     path("recipe/<int:pk>/detail/", RecipeDetailView.as_view(), name="recipe-detail"),
     path("recipe/add/", RecipeCreateView.as_view(), name="recipe-add"),
     path("recipe/<int:pk>/", RecipeUpdateView.as_view(), name="recipe-update"),
