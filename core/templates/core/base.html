@@ -5,8 +5,8 @@
     {% block bscss %} {% endblock %}
 </head>
 
-<body data-bs-theme="miami">
-    <div class="container-fluid" style="background: linear-gradient(90deg, var(--bs-secondary-bg),var(--bs-tertiary-bg));">
+<body data-bs-theme="miami" style="overscroll-behavior: none;">
+    <div class="container-fluid" style="background: linear-gradient(90deg, var(--bs-secondary-bg),var(--bs-emphasis-color));">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 ps-3 pe-6 border-bottom border-3">
           <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
             <img class="bi me-2" width="40" height="40" src="{% static 'core/img/logo.png' %}">
