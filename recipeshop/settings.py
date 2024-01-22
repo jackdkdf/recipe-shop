@@ -1,4 +1,5 @@
 import os
+from dotenv import load_dotenv
 
 from pathlib import Path
 
@@ -124,6 +125,9 @@ MEDIA_URL = 'media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AllAuth settings
+
+
+load_dotenv()
 SOCIALACCOUNT_PROVIDERS = {
     "google": {
         # Provide google api credentials here
@@ -133,8 +137,8 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
         "APPS": [
             {
-                "client_id": "125739035473-168pdeo38tbcl0lmjjtk45fof8r0a05k.apps.googleusercontent.com",
-                "secret": "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",
+                "client_id": os.getenv("CLIENT_ID"),
+                "secret": os.getenv("CLIENT_SECRET"),
                 "key": ""
             },
         ],        
