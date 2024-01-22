@@ -20,23 +20,20 @@
                 <a href="{% url 'recipe-list' %}" class="nav-link{% if url_name == 'recipe-list' %} active" aria-current="page" style="font-size: medium;{% endif %}{% if url_name == 'recipe-search' %} active" aria-current="page" style="font-size: medium;{% endif %}">Recipes</a>
             </li>
             <li class="nav-item">
-                <a href="{% url 'recipe-saved' %}" class="nav-link{% if url_name == 'recipe-saved' %} active" aria-current="page" style="font-size: medium;{% endif %}">Saved</a>
-            </li>
-            <li class="nav-item">
-              <a href="{% url 'recipe-day' %}" class="nav-link{% if url_name == 'recipe-day' %} active" aria-current="page" style="font-size: medium;{% endif %}">Recipe of the Day</a>
+              <a href="{% url 'recipe-day' %}" class="nav-link{% if url_name == 'recipe-day' %} active" aria-current="page" style="font-size: medium;{% endif %}">ROTD</a>
           </li>
             <li class="nav-item">
                 <a href="{% url 'recipe-cart' %}" class="nav-link{% if url_name == 'recipe-cart' %} active" aria-current="page" style="font-size: medium;{% endif %}">Cart (<span id='cart-count'>0</span>)</a>
             </li>
             {% endwith %}
-            <li class="nav-item dropdown align-items-center justify-content-center">
-              <a class="dropdown-toggle d-flex align-items-center link-body-emphasis text-decoration-none" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown align-items-center justify-content-center ms-2">
+              <a class="dropdown-toggle align-items-center link-body-emphasis text-decoration-none" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width="32" height="32" class="bi rounded-circle ">
               </a>
-              <div class="dropdown-menu m-0 p-0" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Dashboard</a>
+              <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdownMenuLink" style="border: 1px solid black;">
+                <a class="dropdown-item" href="{% url 'recipe-saved' %}">Saved Recipes</a>
                 <a class="dropdown-item" href="#">Edit Profile</a>
-                <a class="dropdown-item" href="#">Log Out</a>
+                <a class="dropdown-item" href="#">Sign Out</a>
               </div>
             </li>
           </ul>
