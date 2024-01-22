@@ -21,10 +21,3 @@ class Ingredient(models.Model):
     recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     quantity = models.IntegerField(default=1)
-
-
-# Store link to user's google account avatar
-class UserAvatar(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # Link to user's avatar
-    avatar = models.CharField(max_length=300)
