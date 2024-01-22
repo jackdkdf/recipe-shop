@@ -1,25 +1,25 @@
 # TODO
 # Account system using Google login
-# Filters
-# Search bar functionality
+# Filters (vegan/vegetarian/omnivore/carnivore)
 # Larger logo
 # Search filters
 # Cart
+# Proper pagination
+# Detailview
+# Recipe of the day
 # Saved recipes
 # Ingredients
 # Scraper
 # Hosting
-
-from typing import Any
 from django.db.models.query import QuerySet
 from django.urls import reverse_lazy
-from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Recipe
 
 # Default list view for all recipes unfiltered
-class RecipeListView(ListView):
+class RecipeListView(LoginRequiredMixin, ListView):
     model = Recipe
     paginate_by = 15
     template_name = "/core/recipe_list.html"
@@ -36,6 +36,10 @@ class RecipeSearchView(ListView):
         return object_list
 
 class RecipeDetailView(DetailView):
+    model = Recipe
+
+# TODO
+class RecipeOfTheDayView(DetailView):
     model = Recipe
 
 class RecipeCreateView(CreateView):

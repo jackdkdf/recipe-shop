@@ -29,6 +29,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -39,6 +43,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "allauth.account.middleware.AccountMiddleware",
 ]
 
 ROOT_URLCONF = 'recipeshop.urls'
@@ -117,3 +122,24 @@ MEDIA_URL = 'media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# AllAuth settings
+SOCIALACCOUNT_PROVIDERS = {
+    "google": {
+        # Provide google api credentials here
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        "APPS": [
+            {
+                "client_id": "125739035473-168pdeo38tbcl0lmjjtk45fof8r0a05k.apps.googleusercontent.com",
+                "secret": "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",
+                "key": ""
+            },
+        ],        
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
