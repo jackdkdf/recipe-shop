@@ -33,7 +33,13 @@
               <div class="dropdown-menu mt-3" aria-labelledby="navbarDropdownMenuLink" style="border: 1px solid black;">
                 <a class="dropdown-item" href="{% url 'recipe-saved' %}">Saved Recipes</a>
                 <a class="dropdown-item" href="#">Edit Profile</a>
-                <a class="dropdown-item" href="#">Sign Out</a>
+                <form method="post" action="{% url 'account_logout' %}" class="m-0">
+                  {% csrf_token %}
+                  {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                  {% endif %}
+                  <button class="dropdown-item" type="submit">Logout</button>
+                </form>
               </div>
             </li>
           </ul>
