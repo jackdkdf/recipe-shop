@@ -119,7 +119,7 @@ $nav-pills-link-active-color: var(--bs-body-color);
     line-height: $input-line-height;
     color: $input-color;
     appearance: none; // Fix appearance for date inputs in Safari
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: rgba(255, 255, 255, 0.25);
     background-clip: padding-box;
     border-color: transparent;
     border-style: solid;
@@ -127,11 +127,11 @@ $nav-pills-link-active-color: var(--bs-body-color);
   }
 
 .form-control-new:hover, .form-control-new:focus {
-    background: transparent;
+    background-color: rgba(255, 255, 255, 0.4);;
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-color: rgba(13, 110, 253, 0.4);
+    border-color: rgba(0, 0, 0, 0.4);
     border-style: solid;
     border-width: thin;
   }
