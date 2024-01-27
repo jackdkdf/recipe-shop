@@ -188,8 +188,8 @@ $nav-pills-link-active-color: var(--bs-body-color);
   
   /* Style the checkmark/indicator */
   .checkbox-primary {
-    color: #ffffff; 
+    color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1)); 
   }
   .checkbox-primary input:checked ~ .checkmark:after {
-      color: #ffffff; 
+      color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1))
     }
